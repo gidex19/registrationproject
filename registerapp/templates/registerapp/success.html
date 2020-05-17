@@ -1,0 +1,12 @@
+{% extends "registerapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+        <div class="jumbotron mt-2">
+        <h6> Your Application has been successfully submitted</h6>
+        <p> proceed to printout your PDF</p>
+        <a href="{% url 'pdf' %}" class="btn btn-sm btn-outline-info"> Print Pdf </a>
+        </div>
+    </div>
+{% endblock content %}

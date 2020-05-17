@@ -1,0 +1,30 @@
+{% extends "registerapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+        {% if user.submitted == False %}
+        <div class="jumbotron mt-2">
+        <h6> You have not submitted your application..</h6>
+        <div>
+            <a class="btn btn-sm btn-outline-info" href="{% url 'bio-create' %}"> Proceed to Apply</a>
+        </div>
+        </div>
+        {% endif %}
+
+        {% if user.submitted == True %}
+
+        <div class="jumbotron mt-2">
+        <h6> Your Application has already been submitted.</h6>
+        <h6> Click on the Update button to update your information</h6>
+        <div>
+            <a class="btn btn-sm btn-outline-info" href="{% url 'bio-update' pk %}"> Update my info</a>
+        </div>
+        <div class="mt-4">
+            <a class="btn btn-sm btn-outline-info" href="{% url 'pdf' %}"> Download my pdf</a>
+        </div>
+
+        {% endif %}
+        </div>
+    </div>
+{% endblock content %}

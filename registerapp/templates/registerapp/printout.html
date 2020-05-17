@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https:www.w3.org/TR/html4/loose.dtd">
+<html>
+<link rel="stylesheet"  type="text/css" href="{% static 'registerapp/bootstrap.min.css' %}">
+    <head>
+        <title>
+            {{ my_bio.first_name }} _ {{ my_bio.last_name }}_pdf
+        </title>
+        <style type="text/css">
+            .blue_headers{
+                  font-size: 18px; color: #3c78dd;}
+            .text{
+                  font-size: 11px;}
+        </style>
+    </head>
+    <body>
+    <div class="main-body">
+
+        <h4 class="blue_headers"> Hello {{my_bio.last_name}} {{my_bio.first_name }} , Your Application has been submitted successfully</h4>
+            <p class="text">First Name: {{ my_bio.first_name }}</p>
+            <p class="text">Middle Name: {{ my_bio.midddle_name }}</p>
+            <p class="text">Last Name: {{ my_bio.last_name }}</p>
+            <p class="text">Email Address: {{ my_bio.user.username }}</p>
+            <p class="text">Gender: {{ my_bio.gender }}</p>
+            <p class="text">Date of Birth: {{ my_bio.date_of_birth }}</p>
+
+        <h6> Academic Information</h6>
+        <p class="text">Primary school attended: {{ my_bio.primary }}</p>
+        <p class="text">Secondary school attended: {{my_bio.secondary}}</p>
+        <p class="text">Tertiary Institution attended: {{ my_bio.tertiary }}</p>
+
+        <div class="jumbotron">
+        <h6> Your Referee Details are as follows</h6>
+        <p class="text"> Referee 1</p>
+        <p class="text">Name: {{ my_bio.nok1_name }}</p>
+        <p class="text">Phone: {{my_bio.nok1_phone}}</p>
+        <p class="text">Relationship: {{ my_bio.nok1_relationship }}</p>
+        <p class="text"> Referee 2</p>
+        <p class="text">Name: {{ my_bio.nok2_name }}</p>
+        <p class="text">Phone: {{my_bio.nok2_phone}}</p>
+        <p class="text">Relationship: {{ my_bio.nok2_relationship }}</p>
+        </div>
+
+        <h6> Documents uploaded</h6>
+        <img src={{my_bio.passport.url}}>
+        <img src= {{my_bio.passport}}>
+        <p class="text">Passport Photograph: {{my_bio.passport.url}}</p>
+        <p class="text">Birth Certificate: {{ my_bio.birth_cert }}</p>
+        <p class="text">O Level Result: {{ my_bio.o_level }}</p>
+        <p class="text">Indegenship Certificate: {{ my_bio.indegeneship_cert }}</p>
+        <p class="text">Degree Cert: {{my_bio.degree_cert}}</p>
+
+
+        </div>
+    </body>
+
+</html>
